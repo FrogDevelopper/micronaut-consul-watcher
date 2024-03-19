@@ -1,0 +1,16 @@
+micronaut:
+  application:
+    name: microservices-tools
+
+  config-client:
+    enabled: false
+
+consul:
+  client:
+    registration:
+      enabled: false
+    host: ${CONSUL_HOST:localhost}
+    port: ${CONSUL_TCP_8500:8500}
+    config:
+      path: test
+

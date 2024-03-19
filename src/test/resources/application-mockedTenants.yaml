@@ -1,0 +1,39 @@
+consul:
+  cache:
+    path: some/cool/path/
+    mocked:
+      global:
+        cache-class: com.rakuten.eureca.libs.consul.cache.MyConfig
+        mocks:
+          correct-tenant: |-
+            {
+              "someDayPeriod":"P1D",
+              "someTimePeriod":"PT1H",
+              "key":"some_nice_value",
+              "innerConfig": {
+                "innerField": "something we don't really care"
+              }
+            }
+          incorrect-tenant: |-
+            {
+              "someDayPeriod":"P1D",
+              "someTimePeriod":"PT1H",
+              "key":"some_nice_value
+              "innerConfig": {
+                "innerField": "something we don't really care"
+              }
+      filter:
+        cache-class: com.rakuten.eureca.libs.consul.cache.MyOtherConfig
+        mocks:
+          correct-tenant: |-
+            {
+                "left":"5",
+                "operator":"PLUS",
+                "right":6
+            }
+          incorrect-tenant: |-
+            {
+                "left":5,
+                "operator":"PLUS",
+                "right":"six"
+            }

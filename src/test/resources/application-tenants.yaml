@@ -1,0 +1,12 @@
+consul:
+  cache:
+    path: some/cool/path/
+    configs:
+      global:
+        cache-class: com.rakuten.eureca.libs.consul.cache.MyConfig
+      filter:
+        cache-class: com.rakuten.eureca.libs.consul.cache.MyOtherConfig
+
+jackson:
+  serialization:
+    WRITE_DURATIONS_AS_TIMESTAMPS: false
